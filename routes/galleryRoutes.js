@@ -20,7 +20,6 @@ router.route('/')
         db.Picture.findAll()
         .then((data) => {
           // console.log("data",data);
-        console.log('data',data[0].dataValues);
         res.render('index', {
           picture: data
         });
@@ -32,6 +31,21 @@ router.route('/new')
       .get((req, res) => {
         res.render('new', null);
       });
+
+router.route('/:id')
+        .get((req, res) => {
+          db.Picture.findOne({
+            where: {
+              id: req.params.id
+            }
+          })
+          .then((data) => {
+            console.log("data id", data);
+            res.render('picture', {
+              picture: data.dataValues
+            });
+          });
+        });
 
 
 
