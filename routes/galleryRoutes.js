@@ -5,7 +5,15 @@ const db = require('../models');
 
 router.route('/')
       .post((req, res) => {
-        res.render('new', null);
+        let pictureInfo = req.body;
+        db.Picture.create({
+          author: req.body.author,
+          link: req.body.link,
+          title: req.body.title
+        }).then(function(){
+          res.redirect('/');
+        });
+
       })
       // Retrieves the index page
       .get((req, res) => {
