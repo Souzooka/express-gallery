@@ -32,6 +32,17 @@ router.route('/new')
       });
 
 router.route('/:id')
+        .get((req, res) => {
+          db.Picture.findOne({
+            where: {
+              id: req.params.id
+            }
+          })
+          .then((data) => {
+            console.log("data id", data.dataValues);
+            res.render('picture', data.dataValues);
+          });
+        })
         .put((req, res) => {
           console.log('test')
           db.Picture.update({
@@ -47,18 +58,18 @@ router.route('/:id')
             res.redirect(303,`/gallery/${req.params.id}`);
           });
         })
-
-        .get((req, res) => {
-          db.Picture.findOne({
+        .delete( (req, res) => {
+          db.Picture.destroy({
             where: {
               id: req.params.id
             }
           })
-          .then((data) => {
-            console.log("data id", data.dataValues);
-            res.render('picture', data.dataValues);
+          .then( (data) => {
+            res.redirect(303, '/gallery');
           });
         });
+
+
 
 router.route('/:id/edit')
         .get( (req, res) => {
