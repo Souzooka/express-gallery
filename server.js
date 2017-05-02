@@ -1,4 +1,6 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const app = express();
 const db = require('./models');
 const handlebars = require('express-handlebars');
@@ -15,6 +17,12 @@ const hbs = handlebars.create({
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
+
+//To use bodyParser
+app.use(bodyParser.urlencoded({extended: false}));
+
+//To use methodOverride
+app.use(methodOverride('_method'));
 
 
 // Routes
