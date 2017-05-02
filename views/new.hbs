@@ -1,0 +1,15 @@
+<span>Post a new picture:</span>
+<hr>
+<form action="/gallery" method="post" enctype="application/x-www-form-urlencoded">
+  Author:<br>
+  <input type="text" name="author"><br>
+  Link:<br>
+  <input type="text" name="link"><br>
+  Description:<br>
+  <input type="text" name="description"><br><br>
+  <input type="submit">
+</form>
+{{#if error}}
+  <p>{{error}}</p>
+{{/if}}
+<hr>

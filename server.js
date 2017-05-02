@@ -5,6 +5,7 @@ const handlebars = require('express-handlebars');
 const PORT = process.env.port || 3000;
 
 const indexRoutes = require('./routes/indexRoutes');
+const galleryRoutes = require('./routes/galleryRoutes');
 
 // Create Handlebars Engine
 const hbs = handlebars.create({
@@ -18,6 +19,7 @@ app.set('view engine', 'hbs');
 
 // Routes
 app.use('/', indexRoutes);
+app.use('/gallery', galleryRoutes);
 
 // Initialize server
 const server = app.listen(PORT, () => {
