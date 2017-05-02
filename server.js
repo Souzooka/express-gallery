@@ -4,8 +4,20 @@ const db = require('./models');
 const handlebars = require('express-handlebars');
 const PORT = process.env.port || 3000;
 
+const indexRoutes = require('./routes/indexRoutes');
+
+// Create Handlebars Engine
+const hbs = handlebars.create({
+  extname: '.hbs',
+  defaultLayout: 'main'
+});
+
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+
+
 // Routes
-// app.use('/', indexRoutes);
+app.use('/', indexRoutes);
 
 // Initialize server
 const server = app.listen(PORT, () => {
