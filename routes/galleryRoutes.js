@@ -17,8 +17,10 @@ router.route('/')
       })
       // Retrieves the index page
       .get((req, res) => {
-        console.log(db.Picture.findAll());
-        res.render('index', null);
+        db.Picture.findAll().then((data) => {
+          console.log("data",data);
+        res.render('index', data);
+        });
       });
 
 router.route('/new')
