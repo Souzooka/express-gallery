@@ -21,6 +21,9 @@ app.set('view engine', 'hbs');
 //To use bodyParser
 app.use(bodyParser.urlencoded({extended: false}));
 
+//To use static files
+app.use('/static', express.static('public'));
+
 //To use methodOverride
 app.use(methodOverride('_method'));
 
