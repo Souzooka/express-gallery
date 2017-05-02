@@ -3,16 +3,15 @@ This is the index page.
 {{#each picture}} {{!-- iterates over the array of books --}}
   <div class="picture">
     <h1>Author: {{author}}</h1>
-    <h2>Link: {{link}}</h2>
     <h2>Description: {{description}}</h2>
-    <img src="{{link}}" alt="">
-  </div>
-  <form action="/gallery/{{id}}/edit" method="GET" >
-   <input type="submit" value="Edit Picture">
+    <a href="/gallery/{{id}}"><img src="{{link}}" alt="{{description}}">
+  </div></a>
+<!--   <form action="/gallery/{{id}}/edit" method="GET" >
+ <input type="submit" value="Edit Picture">
 </form>
 <form action="/gallery/{{id}}?_method=DELETE" method="POST" >
-   <input type="submit" value="Remove Picture">
-</form>
+ <input type="submit" value="Remove Picture">
+</form> -->
 
 {{/each}}
 <form action="/gallery/new" method="GET" >
