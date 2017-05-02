@@ -3,8 +3,8 @@ This is the index page.
 {{#each picture}} {{!-- iterates over the array of books --}}
   <div class="picture">
     <h1>Author: {{author}}</h1>
-    <h2>Title: {{title}}</h2>
     <h2>Link: {{link}}</h2>
+    <h2>Description: {{description}}</h2>
   </div>
   <form action="/picture/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Product">
