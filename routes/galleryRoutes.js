@@ -62,7 +62,19 @@ router.route('/:id')
 
 router.route('/:id/edit')
         .get( (req, res) => {
-          res.render('edit', {id: req.params.id});
+          db.Picture.findOne({
+            where: {
+              id: req.params.id
+            }
+          })
+          .then((data) => {
+            res.render('edit', {
+              id: req.params.id,
+              author: data.dataValues.author,
+              link: data.dataValues.link,
+              description: data.dataValues.description
+            });
+          });
         });
 
 module.exports = router;
