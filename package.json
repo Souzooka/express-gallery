@@ -1,0 +1,32 @@
+{
+  "name": "express-gallery",
+  "version": "1.0.0",
+  "description": "Express Gallery ===============",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souzooka/express-gallery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Souzooka/express-gallery/issues"
+  },
+  "homepage": "https://github.com/Souzooka/express-gallery#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "handlebars": "^4.0.7",
+    "pg": "^6.1.5",
+    "sequelize": "^3.30.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "supertest": "^3.0.0"
+  }
+}
