@@ -19,11 +19,11 @@ router.route('/')
       .get((req, res) => {
         db.Picture.findAll()
         .then((data) => {
-          // console.log("data",data);
-        res.render('index', {
-          picture: data
+            // console.log("data",data);
+          res.render('index', {
+            picture: data
+          });
         });
-      });
       });
 
 router.route('/new')
@@ -33,6 +33,17 @@ router.route('/new')
       });
 
 router.route('/:id')
+        .put((req, res) => {
+          db.Picture.findOne({
+            where: {
+              id: req.params.id
+            }
+          })
+          .then((data)=>{
+            res.redirect(303,'/gallery/${req.params.id}');
+          });
+        })
+
         .get((req, res) => {
           db.Picture.findOne({
             where: {
@@ -40,7 +51,7 @@ router.route('/:id')
             }
           })
           .then((data) => {
-            console.log("data id", data);
+            console.log("data id", data.dataValues);
             res.render('picture', {
               picture: data.dataValues
             });

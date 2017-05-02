@@ -1,8 +1,9 @@
-{{#if id}}
+
 <div class="product">
   <h1>Title: {{title}}</h1>
   <h2>Author : {{author}}</h2>
   <h2>Description: {{description}}</h2>
+  <img src="{{link}}" alt="">
 </div>
 <form action="/gallery/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Picture">
@@ -10,4 +11,3 @@
 <form action="/gallery/{{id}}?_method=DELETE" method="POST" >
    <input type="submit" value="Remove Picture">
 </form>
-{{/if}}
