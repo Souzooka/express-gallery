@@ -5,11 +5,10 @@ const db = require('../models');
 
 router.route('/')
       .post((req, res) => {
-        let pictureInfo = req.body;
         db.Picture.create({
           author: req.body.author,
           link: req.body.link,
-          title: req.body.title
+          description: req.body.description
         }).then(function(){
           res.redirect('/');
         });
@@ -52,9 +51,7 @@ router.route('/:id')
           })
           .then((data) => {
             console.log("data id", data.dataValues);
-            res.render('picture', {
-              picture: data.dataValues
-            });
+            res.render('picture', data.dataValues);
           });
         });
 
