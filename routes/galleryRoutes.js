@@ -39,12 +39,11 @@ router.route('/:id')
             }
           })
           .then((data) => {
-            console.log("data id", data.dataValues);
             res.render('picture', data.dataValues);
           });
         })
         .put((req, res) => {
-          console.log('test')
+
           db.Picture.update({
             author: req.body.author,
             link: req.body.link,
