@@ -1,0 +1,53 @@
+body {
+  background-color: white;
+  font-family: 'Oswald', sans-serif;
+  color: grey; }
+
+h1 {
+  color: grey; }
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.tg td {
+  padding: 5px 0px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+
+.tg th {
+  padding: 5px 0px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+
+.tg .tg-title {
+  font-size: 36px;
+  vertical-align: top; }
+
+.tg .tg-mission {
+  vertical-align: top; }
+
+#header {
+  border-top: 1px  solid grey; }
+
+#main_image {
+  margin: 0 auto;
+  max-width: 800px; }
+
+.film_roll {
+  display: flex; }
+
+.container {
+  height: 400px;
+  display: flex;
+  flex-direction: column; }
+
+@media (max-width: 600px) {
+  .film_roll {
+    flex-direction: column; }
+  body {
+    background: OldLace; } }

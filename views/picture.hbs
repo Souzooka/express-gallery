@@ -1,9 +1,52 @@
-
-<div class="picture">
-    <h1>Author: {{author}}</h1>
-    <h2>Description: {{description}}</h2>
-  <img src="{{link}}" alt="{{description}}">
+<link rel="stylesheet"  href="/static/css/styles.css">
+<div id= header>
+<table style="width: 781px; height: 28px; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 366px;">&nbsp;<h1>_ARCHITEKT</h1></td>
+<td style="width: 83px;">&nbsp;</td>
+<td style="width: 442px;">&nbsp;Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme</td>
+</tr>
+</tbody>
+</table>
 </div>
+<table style="width: 100%; height: 449px;" cellpadding="10">
+<tbody>
+<tr>
+<td style="width: 390px;" rowspan="5" padding= "50">&nbsp;&nbsp;&nbsp;
+<div id="feature">
+    <h3>{{author}}</h3>
+    <a href="/gallery/{{id}}"><img height="500" src="{{link}}" alt="{{description}}"></a>
+    <h4>{{description}}</h4>
+</div>
+</td>
+
+<td style="width: 300px" valign="top">
+    <div class="picture">
+      <a href="/gallery/2"><img height="100"src="https://static.dezeen.com/uploads/2011/11/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_1.jpg" ></a>
+      <h3>something</h3>
+    </div>
+  </td>
+</tr>
+
+<td style="width: 300px" valign="top">
+    <div class="picture">
+      <a href="/gallery/3"><img height="100"src="http://www.fantasticnorway.no/wp-content/uploads/2011/10/Sirene@21.jpg" ></a>
+      <h3>something</h3>
+    </div>
+  </td>
+</tr>
+
+<td style="width: 300px" valign="top">
+    <div class="picture">
+      <a href="/gallery/4"><img height="100"src="https://i0.wp.com/kienviet.net/wp-content/uploads/2012/09/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_2.jpg" ></a>
+      <h3>something</h3>
+    </div>
+  </td>
+</tr>
+
+</tbody>
+</table>
 <form action="/gallery/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Picture">
 </form>
