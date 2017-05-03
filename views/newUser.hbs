@@ -1,0 +1,14 @@
+<link rel="stylesheet"  href="css/styles.css">
+<span>Make a new user:</span>
+<hr>
+<form action="/user/create" method="post" enctype="application/x-www-form-urlencoded">
+  Username:<br>
+  <input type="text" name="username"><br>
+  Password:<br>
+  <input type="password" name="password"><br>
+</form>
+<a href="/gallery"><button>Back</button></a>
+{{#if error}}
+  <p>{{error}}</p>
+{{/if}}
+<hr>

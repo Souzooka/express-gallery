@@ -18,6 +18,7 @@ const saltRounds = 10;
 
 const indexRoutes = require('./routes/indexRoutes');
 const galleryRoutes = require('./routes/galleryRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 //Redis Server
 app.use(session({
@@ -112,6 +113,7 @@ app.use(methodOverride('_method'));
 // Routes
 app.use('/', indexRoutes);
 app.use('/gallery', galleryRoutes);
+app.use('/user', userRoutes);
 
 // Initialize server
 const server = app.listen(PORT, () => {
