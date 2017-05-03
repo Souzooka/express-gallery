@@ -8,7 +8,8 @@ h1 {
 
 .tg {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+/*  flex: wrap;*/}
 
 .tg td {
   padding: 5px 0px;

@@ -1,27 +1,48 @@
 <link rel="stylesheet"  href="/static/css/styles.css">
-<table class="tg">
-  <tr>
-    <th class="tg-title">_ARCHITEKT </th>
-    <th class="tg-mission">      </th>
-    <th class="tg-mission">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme</th>
-  </tr>
+<table style="width: 781px; height: 28px; margin-left: auto; margin-right: auto;" border="top">
+<tbody>
+<tr>
+<td style="width: 366px;">&nbsp;_ARCHITEKT</td>
+<td style="width: 83px;">&nbsp;</td>
+<td style="width: 442px;">&nbsp;Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme</td>
+</tr>
+</tbody>
 </table>
-<img src="{{picture.1.link}}" alt="{{description}}">
 
-{{#each picture}} {{!-- iterates over the array of books --}}
-  <div class="picture">
-    <h3>Author: {{author}}</h3>
-    <a href="/gallery/{{id}}"><img src="{{link}}" alt="{{description}}"></a>
-    <h4>Description: {{description}}</h4>
-  </div>
-<form action="/gallery/{{id}}/edit" method="GET" >
- <input type="submit" value="Edit Picture">
-</form>
-<form action="/gallery/{{id}}?_method=DELETE" method="POST" >
- <input type="submit" value="Remove Picture">
-</form>
 
+{{!-- <ul>
+{{#each picture as |item|}}
+  <li>
+    {{item.0.link}}:{{item.2}}
+  </li>
 {{/each}}
+</ul> --}}
+<table style="width: 100%; height: 449px;">
+<tbody>
+<tr>
+<td style="width: 390px;" rowspan="3">&nbsp;&nbsp;&nbsp;
+<div id="feature">
+
+    <h3>{{picture.0.author}}</h3>
+    <a href="/gallery/{{picture.0.id}}"><img height="500" src="{{picture.0.link}}" alt="{{picture.0.description}}"></a>
+    <h4>{{picture.0.description}}</h4>
+</div>
+</td>
+{{#each picture}}
+<td style="width: 300px" valign="top">
+    <div class="picture">
+      <a href="/gallery/{{id}}"><img height="100"src="{{link}}" alt="{{description}}"></a>
+      <h3>{{author}}</h3>
+    </div>
+  </td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+
+
+
+
 <form action="/gallery/new" method="GET" >
    <input type="submit" value="New Picture">
 </form>
