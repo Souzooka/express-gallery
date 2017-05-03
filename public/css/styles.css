@@ -1,5 +1,32 @@
 body {
-  background-color: grey;
-  font-family: 'Oswald', sans-serif; }
-  body h1 {
-    color: white; }
+  background-color: white;
+  font-family: 'Oswald', sans-serif;
+  color: grey; }
+
+h1 {
+  color: grey; }
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.tg td {
+  padding: 5px 0px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+
+.tg th {
+  padding: 5px 0px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal; }
+
+.tg .tg-title {
+  font-size: 36px;
+  vertical-align: top; }
+
+.tg .tg-mission {
+  vertical-align: top; }
