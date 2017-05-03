@@ -16,6 +16,7 @@ router.route('/')
       })
       // Retrieves the index page
       .get((req, res) => {
+        console.log("req",req.isAuthenticated());
         db.Picture.findAll()
         .then((data) => {
             // console.log("data",data);
