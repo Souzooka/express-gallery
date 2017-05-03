@@ -39,8 +39,12 @@ h1 {
   max-width: 800px; }
 
 .film_roll {
+  display: flex; }
+
+.container {
+  height: 400px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-direction: column; }
 
 @media (max-width: 600px) {
   .film_roll {

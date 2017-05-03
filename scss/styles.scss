@@ -27,8 +27,14 @@ h1 {
 
 .film_roll{
     display: flex;
-    flex-wrap: wrap;
   }
+
+.container{
+  height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media (max-width: 600px) {
   .film_roll{
@@ -38,3 +44,5 @@ h1 {
     background: OldLace;
   }
 }
+
+
