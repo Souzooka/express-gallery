@@ -11,31 +11,15 @@
 </table>
 </div>
 <div id="main_image"> <img src="http://www.dessign.net/architekttheme/wp-content/uploads/architekt21-959x349.jpg" alt="image" width= "80%"></div>
-
-
-
-
-<table style="width: 100%; height: 449px;" cellpadding="10">
-<tbody>
-<tr>
-<td style="width: 390px;" rowspan="5" padding= "50">&nbsp;&nbsp;&nbsp;
-<div id="feature">
-    <h3>{{picture.0.author}}</h3>
-    <a href="/gallery/{{picture.0.id}}"><img height="500" src="{{picture.0.link}}" alt="{{picture.0.description}}"></a>
-    <h4>{{picture.0.description}}</h4>
-</div>
-</td>
+<div class ="film_roll">
 {{#each picture}}
-<td style="width: 300px" valign="top">
-    <div class="picture">
       <a href="/gallery/{{id}}"><img height="100"src="{{link}}" alt="{{description}}"></a>
       <h3>{{author}}</h3>
-    </div>
-  </td>
-</tr>
+
 {{/each}}
-</tbody>
-</table>
+</div>
+
+
 
 
 

@@ -25,8 +25,16 @@ h1 {
   max-width: 800px;
 }
 
+.film_roll{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 @media (max-width: 600px) {
+  .film_roll{
+    flex-direction: column;
+  }
   body {
-    background: red;
+    background: OldLace;
   }
 }
