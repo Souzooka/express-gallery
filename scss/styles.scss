@@ -15,3 +15,18 @@ h1 {
 .tg th{padding:5px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg .tg-title{font-size:36px;vertical-align:top}
 .tg .tg-mission{vertical-align:top}
+
+#header{
+  border-top: 1px  solid grey;
+}
+
+#main_image{
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+@media (max-width: 600px) {
+  body {
+    background: red;
+  }
+}
