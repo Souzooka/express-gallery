@@ -32,10 +32,11 @@ router.route('/login')
       .get((req, res) => {
         console.log("req.query",req.query);
 
-        if(req.query.error = "true"){
+        if(req.query.error === "true"){
           res.render('login',{error: 'Invalid username/password.'})
+        } else {
+          res.render('login', null);
         }
-        res.render('login', null);
       })
 
       .post(passport.authenticate('local', {
