@@ -22,6 +22,10 @@ router.route('/create')
             .then( (user) => {
               console.log(user);
               res.redirect('login');
+            })
+            .catch((user) => {
+              console.log(user);
+              res.render('login',{error: 'Username already exist.'});
             });
           });
         });
@@ -33,7 +37,7 @@ router.route('/login')
         console.log("req.query",req.query);
 
         if(req.query.error === "true"){
-          res.render('login',{error: 'Invalid username/password.'})
+          res.render('login',{error: 'Invalid username/password.'});
         } else {
           res.render('login', null);
         }
