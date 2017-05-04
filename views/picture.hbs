@@ -47,10 +47,21 @@
 
 </tbody>
 </table>
+{{#if loggedin}}
 <form action="/gallery/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Picture">
 </form>
 <form action="/gallery/{{id}}?_method=DELETE" method="POST" >
    <input type="submit" value="Remove Picture">
 </form>
+{{else}}
+<a href="/user/login"><button>Log In</button></a>
+<a href="/user/login"><button>Register</button></a>
+{{!-- <form action="/user/login" method="GET" >
+   <input type="submit" value="Log In">
+</form>
+<form action="/user/create" method="GET" >
+   <input type="submit" value="Register">
+</form> --}}
+{{/if}}
 <a href="/gallery"><button>Back</button></a>

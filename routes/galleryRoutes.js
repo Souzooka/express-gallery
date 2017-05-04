@@ -48,7 +48,14 @@ router.route('/:id')
             }
           })
           .then((data) => {
+            if(req.isAuthenticated()=== true){
+              data.dataValues.loggedin = true;
+                res.render('picture', data.dataValues);
+            } else {
             res.render('picture', data.dataValues);
+            }
+
+
           });
         })
         .put((req, res) => {
@@ -87,12 +94,16 @@ router.route('/:id/edit')
             }
           })
           .then((data) => {
-            res.render('edit', {
-              id: req.params.id,
-              author: data.dataValues.author,
-              link: data.dataValues.link,
-              description: data.dataValues.description
-            });
+            if(req.isAuthenticated()=== true){
+              res.render('edit', {
+                id: req.params.id,
+                author: data.dataValues.author,
+                link: data.dataValues.link,
+                description: data.dataValues.description
+              });
+            } else {
+                res.redirect('/');
+              }
           });
         });
 
