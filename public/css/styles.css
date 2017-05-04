@@ -1,7 +1,9 @@
 body {
   background-color: white;
   font-family: 'Oswald', sans-serif;
-  color: grey; }
+  color: grey;
+  display: block;
+  justify-content: space-around; }
 
 h1 {
   color: grey; }
@@ -36,18 +38,24 @@ h1 {
 
 #main_image {
   margin: 0 auto;
-  max-width: 800px; }
+  max-width: 1000px; }
 
 .film_roll {
-  display: flex; }
+  width: 32%; }
 
 .container {
-  height: 400px;
   display: flex;
-  flex-direction: column; }
+  justify-content: space-around;
+  flex-flow: row wrap; }
 
-@media (max-width: 600px) {
+.thumbnail {
+  width: 80%; }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center; }
   .film_roll {
-    flex-direction: column; }
+    width: 100%; }
   body {
     background: OldLace; } }

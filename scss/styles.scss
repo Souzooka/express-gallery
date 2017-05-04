@@ -1,7 +1,10 @@
 body {
-  background-color: white;
+  background-image: "../assets/seigaiha.png"
+  background-color: steelblue;
   font-family: 'Oswald', sans-serif;
   color: grey;
+  display: block;
+  justify-content: space-around;
 
 }
 
@@ -22,24 +25,36 @@ h1 {
 
 #main_image{
   margin: 0 auto;
-  max-width: 800px;
+  max-width:1000px;
 }
 
 .film_roll{
-    display: flex;
+  width:32%;
   }
 
 .container{
-  height: 400px;
-    display: flex;
-    flex-direction: column;
+display: flex;
+   justify-content: space-around;
+   flex-flow: row wrap;
+
 }
 
-
-@media (max-width: 600px) {
-  .film_roll{
-    flex-direction: column;
+.thumbnail{
+  width: 80%;
   }
+
+
+@media only screen and (max-width: 768px) {
+  .container{
+    flex-direction: column;
+       justify-content: center;
+  }
+
+  .film_roll{
+  width:100%;
+  }
+
+
   body {
     background: OldLace;
   }
