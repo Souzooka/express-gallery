@@ -5,10 +5,12 @@ const db = require('../models');
 
 router.route('/')
       .post((req, res) => {
+        console.log(req.user.dataValues);
         db.Picture.create({
           author: req.body.author,
           link: req.body.link,
-          description: req.body.description
+          description: req.body.description,
+          UserId: parseInt(req.user.dataValues.id)
         }).then(function(){
           res.redirect('/');
         });
