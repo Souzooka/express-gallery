@@ -30,4 +30,11 @@
 <form action="/user/logout" method="GET" >
    <input type="submit" value="Log Out">
 </form>
+{{else}}
+<form action="/user/login" method="GET" >
+   <input type="submit" value="Log In">
+</form>
+<form action="/user/create" method="GET" >
+   <input type="submit" value="Register">
+</form>
 {{/if}}
