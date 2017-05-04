@@ -48,5 +48,11 @@ router.route('/login')
         failureRedirect: 'login?error=true'
       }));
 
+router.route('/logout')
+      .get((req, res) =>{
+        req.logout();
+        res.redirect('/gallery');
+      });
+
 
 module.exports = router;

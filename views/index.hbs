@@ -23,7 +23,11 @@
 
 
 
-
+{{#if loggedin}}
 <form action="/gallery/new" method="GET" >
    <input type="submit" value="New Picture">
 </form>
+<form action="/user/logout" method="GET" >
+   <input type="submit" value="Log Out">
+</form>
+{{/if}}

@@ -20,9 +20,17 @@ router.route('/')
         db.Picture.findAll()
         .then((data) => {
             // console.log("data",data);
-          res.render('index', {
-            picture: data
-          });
+            if(req.isAuthenticated()=== true){
+              res.render('index', {
+                picture: data,
+                loggedin: true
+              });
+            } else {
+                res.render('index', {
+                picture: data
+              });
+            }
+
         });
       });
 
