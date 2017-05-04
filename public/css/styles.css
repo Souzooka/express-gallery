@@ -36,7 +36,7 @@ hr.style14 {
   padding: 30px; }
 
 .film_roll {
-  width: 32%; }
+  width: 32.9%; }
 
 .container {
   display: flex;
@@ -44,15 +44,18 @@ hr.style14 {
   flex-flow: row wrap; }
 
 .thumbnail {
-  width: 80%; }
+  width: 85%; }
 
 @media only screen and (max-width: 768px) {
   body {
-    background: OldLace; }
+    background-image: url("../subtle_orange_emboss_@2X.png"); }
   #statement {
     display: none; }
   .container {
     flex-direction: column;
     justify-content: center; }
   .film_roll {
-    width: 100%; } }
+    width: 80%;
+    position: relative;
+    left: 15%;
+    padding-bottom: 30px; } }
