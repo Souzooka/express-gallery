@@ -1,44 +1,39 @@
 body {
-  background-color: white;
+  background-image: url("../seigaiha.png");
   font-family: 'Oswald', sans-serif;
-  color: grey;
-  display: block;
-  justify-content: space-around; }
+  color: grey; }
 
 h1 {
   color: grey; }
 
-.tg {
-  border-collapse: collapse;
-  border-spacing: 0; }
+hr.style14 {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); }
 
-.tg td {
-  padding: 5px 0px;
-  border-style: solid;
-  border-width: 1px;
-  overflow: hidden;
-  word-break: normal; }
+#index {
+  display: block;
+  justify-content: center; }
 
-.tg th {
-  padding: 5px 0px;
-  border-style: solid;
-  border-width: 1px;
-  overflow: hidden;
-  word-break: normal; }
+#top {
+  display: flex;
+  padding: 20px; }
 
-.tg .tg-title {
-  font-size: 36px;
-  vertical-align: top; }
+#logo {
+  font-size: 36pt;
+  padding-left: 10px; }
 
-.tg .tg-mission {
-  vertical-align: top; }
-
-#header {
-  border-top: 1px  solid grey; }
+#statement {
+  padding-left: 150px;
+  padding-right: 100px; }
 
 #main_image {
   margin: 0 auto;
-  max-width: 1000px; }
+  max-width: 1000px;
+  padding: 30px; }
 
 .film_roll {
   width: 32%; }
@@ -52,10 +47,12 @@ h1 {
   width: 80%; }
 
 @media only screen and (max-width: 768px) {
+  body {
+    background: OldLace; }
+  #statement {
+    display: none; }
   .container {
     flex-direction: column;
     justify-content: center; }
   .film_roll {
-    width: 100%; }
-  body {
-    background: OldLace; } }
+    width: 100%; } }
