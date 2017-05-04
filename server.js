@@ -7,7 +7,6 @@ const db = require('./models');
 const { User } = require('./models');
 const handlebars = require('express-handlebars');
 const path = require('path');
-const bodyparser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
@@ -16,9 +15,6 @@ const bcrypt = require('bcrypt');
 const PORT = process.env.port || 3000;
 const saltRounds = 10;
 
-const indexRoutes = require('./routes/indexRoutes');
-const galleryRoutes = require('./routes/galleryRoutes');
-const userRoutes = require('./routes/userRoutes');
 
 //Redis Server
 app.use(session({
@@ -109,6 +105,9 @@ app.use('/static', express.static('public'));
 //To use methodOverride
 app.use(methodOverride('_method'));
 
+const indexRoutes = require('./routes/indexRoutes');
+const galleryRoutes = require('./routes/galleryRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // Routes
 app.use('/', indexRoutes);
