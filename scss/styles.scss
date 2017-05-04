@@ -21,6 +21,11 @@ hr.style14 {
 }
 
 
+#picture_page{
+  display: block;
+  justify-content: center;
+}
+
 #index{
   display: block;
   justify-content: center;
@@ -39,31 +44,46 @@ hr.style14 {
 #statement{
   padding-left: 150px;
   padding-right: 100px;
+  max-height: 130px;
 }
 
 #main_image{
   margin: 0 auto;
-  max-width:1000px;
-  padding: 30px;
+  position: relative;
+  left: 10%;
 }
+
+#selected_picture{
+  margin: 0 auto;
+  position: relative;
+  width: 10%;
+  left: 10%;
+}
+
+.picture{
+  width:80%:
+}
+
 
 .film_roll{
   width:32.9%;
+  position: relative;
   }
 
 .container{
-display: flex;
-   justify-content: space-around;
-   flex-flow: row wrap;
-
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding-top: 6%;
 }
 
 .thumbnail{
-  width: 85%;
+  height: 200px;
+  // width: 85%;
   }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   body {
   background-image: url("../subtle_orange_emboss_@2X.png");
   }
@@ -79,12 +99,9 @@ display: flex;
 
   .film_roll{
   width:80%;
-  position: relative;
   left: 15%;
-
   padding-bottom: 30px;
   }
-
 
 
 }

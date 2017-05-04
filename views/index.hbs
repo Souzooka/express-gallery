@@ -1,22 +1,23 @@
 <link rel="stylesheet"  href="/static/css/styles.css">
 <hr class="style14">
 <div id="index">
-<div id="top">
-  <div id="logo">_ARCHITEKT</div>
-  <div id="statement">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</div>
-</div>
-
-
-<div id="main_image"> <img src="http://www.dessign.net/architekttheme/wp-content/uploads/architekt21-959x349.jpg" alt="image" width= "80%"></div>
-<div class= "container">
-  {{#each picture}}
-  <div class ="film_roll">
-        <a href="/gallery/{{id}}"><img class="thumbnail" src="{{link}}" alt="{{description}}"></a>
-        <h3>{{author}}</h3>
+  <div id="top">
+    <div id="logo">_ARCHITEKT</div>
+    <div id="statement">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</div>
   </div>
-  {{/each}}
-</div>
 
+
+  <div id="main_image"> <img src="http://www.dessign.net/architekttheme/wp-content/uploads/architekt21-959x349.jpg" alt="image" width= "80%">
+  </div>
+
+    <div class= "container">
+      {{#each picture}}
+      <div class ="film_roll">
+            <a href="/gallery/{{id}}"><img class="thumbnail" src="{{link}}" alt="{{description}}"></a>
+            <h3>{{author}}</h3>
+      </div>
+      {{/each}}
+    </div>
 </div>
 
 
