@@ -30,12 +30,17 @@ router.route('/create')
 router.route('/login')
       // Retrieves the index page
       .get((req, res) => {
+        console.log("req.query",req.query);
+
+        if(req.query.error = "true"){
+          res.render('login',{error: 'Invalid username/password.'})
+        }
         res.render('login', null);
       })
 
       .post(passport.authenticate('local', {
         successRedirect: '/gallery',
-        failureRedirect: 'login'
+        failureRedirect: 'login?error=true'
       }));
 
 
