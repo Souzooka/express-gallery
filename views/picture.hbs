@@ -10,33 +10,25 @@
   <div id="picture_section">
 
     <div id="selected_picture">
-        <h3>{{author}}</h3>
+        <h3>{{featured.author}}</h3>
 
-        <a href="/gallery/{{id}}">
-          <img src="{{link}}" alt="{{description}}">
+        <a href="/gallery/{{featured.id}}">
+          <img src="{{featured.link}}" alt="{{featured.description}}">
         </a>
 
-        <h4>{{description}}</h4>
+        <h4>{{featured.description}}</h4>
     </div>
-
     <div id="more_pictures">
+{{#each allPhotos}}
       <a href="/gallery/{{id}}">
-          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
+          <img height=10% src="{{link}}">
         </a>
         <h4>Title</h4>
         <br>
-      <a href="/gallery/{{id}}">
-          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
-        </a>
-        <h4>Title</h4>
-        <br>
-        <a href="/gallery/{{id}}">
-          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
-        </a>
-        <h4>Title</h4>
+{{/each}}
     </div>
-
   </div>
+
 
 </div>
 
