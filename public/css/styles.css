@@ -21,6 +21,7 @@ hr.style14 {
 
 #picture_page {
   display: block;
+  padding-left: 10vw;
   justify-content: center; }
 
 #index {
@@ -32,13 +33,20 @@ hr.style14 {
   padding: 20px; }
 
 #logo {
-  font-size: 36pt;
-  padding-left: 10px; }
+  align-item: center;
+  font-size: 5vmax;
+  padding-left: 10%;
+  padding-top: 2vw; }
 
 #statement {
-  padding-left: 150px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  margin-left: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   padding-right: 100px;
-  max-height: 130px; }
+  font-size: 1.5vw; }
 
 #main_image {
   margin: 0 auto;
@@ -46,10 +54,15 @@ hr.style14 {
   left: 10%; }
 
 #selected_picture {
-  width: 100%; }
+  flex-grow: 3; }
 
-#more_pictures {
-  display: block; }
+#allphotos_container {
+  flex-grow: 1; }
+
+.picture_detail {
+  height: 30vw;
+  display: block;
+  margin: auto; }
 
 .picture {
   width: 80%; }
@@ -65,16 +78,27 @@ hr.style14 {
   padding-top: 6%; }
 
 .thumbnail {
-  height: 200px; }
+  height: 25vw; }
+
+.more_pictures {
+  width: 30vw;
+  display: block;
+  margin: auto; }
 
 @media only screen and (max-width: 600px) {
   body {
     background-image: url("../subtle_orange_emboss_@2X.png"); }
   #statement {
     display: none; }
+  .picture_detail {
+    height: 40vmin; }
   .container {
     flex-direction: column;
     justify-content: center; }
+  .containter_more_pictures {
+    text-align: center; }
+  .more_pictures {
+    height: 30vmin; }
   .film_roll {
     width: 80%;
     left: 15%;

@@ -1,17 +1,20 @@
-<link rel="stylesheet"  href="css/styles.css">
+<link rel="stylesheet"  href="/static/css/styles.css">
 <span>Edit Picture {{id}}:</span>
 <hr>
 <form action="/gallery/{{id}}?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
   Author:<br>
-  <input type="text" name="author" value={{author}}><br>
+  <input type="text" name="author" value={{author}}><br><br>
   Link:<br>
-  <input type="text" name="link" value={{link}}><br>
-  Description:<br>
-  <input type="text" name="description" value={{description}}><br>
+  <textarea rows="3" cols="50" name="link" >{{link}}
+  </textarea><br><br>
+    Description:<br>
+  <textarea rows="7" cols="50" name="description">{{description}}
+  </textarea>
+  <br>
   <br><br>
   <input type="submit">
 </form>
-<a href="/gallery/{{id}}"><button>Back</button></a>
+<a href="/gallery/{{id}}"><button>Back to the Gallery</button></a>
 {{#if error}}
   <p>{{error}}</p>
 {{/if}}

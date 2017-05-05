@@ -13,29 +13,37 @@
         <h3>{{featured.author}}</h3>
 
         <a href="/gallery/{{featured.id}}">
-          <img src="{{featured.link}}" alt="{{featured.description}}">
+          <img class = "picture_detail" src="{{featured.link}}" alt="{{featured.description}}">
         </a>
 
         <h4>{{featured.description}}</h4>
     </div>
-    <div id="more_pictures">
-{{#each allPhotos}}
-      <a href="/gallery/{{id}}">
-          <img height=10% src="{{link}}">
-        </a>
-        <h4>Title</h4>
-        <br>
-{{/each}}
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="allphotos_container">
+      {{#each allPhotos}}
+          <div class="containter_more_pictures">
+            <a href="/gallery/{{id}}">
+                <img class = "more_pictures" src="{{link}}">
+              </a>
+              <h4>{{author}}</h4>
+              <br>
+              <br>
+              <br>
+          </div>
+      {{/each}}
     </div>
+
   </div>
 
 
 </div>
 
 {{#if featured.isOwner}}
-<form action="/gallery/{{featured.id}}/edit" method="GET" >
-   <input type="submit" value="Edit Picture">
-</form>
+<a href="/gallery/{{featured.id}}/edit"><button>Edit Picture</button></a>
 <form action="/gallery/{{featured.id}}?_method=DELETE" method="POST" >
    <input type="submit" value="Remove Picture">
 </form>
@@ -44,4 +52,4 @@
 <a href="/user/login"><button>Log In</button></a>
 <a href="/user/login"><button>Register</button></a>
 {{/unless}}
-<a href="/gallery"><button>Back</button></a>
+<a href="/gallery"><button>Back to gallery</button></a>
