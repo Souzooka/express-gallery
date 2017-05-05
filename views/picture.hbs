@@ -8,7 +8,11 @@
 </div>
 <div id="selected_picture">
     <h3>{{author}}</h3>
-    <a href="/gallery/{{id}}"><img width = 80% src="{{link}}" alt="{{description}}"></a>
+
+    <a href="/gallery/{{id}}">
+      <img width = 80% src="{{link}}" alt="{{description}}">
+    </a>
+
     <h4>{{description}}</h4>
 </div>
 
@@ -36,18 +40,25 @@
     </td>
   </tr>
 
+<<<<<<< HEAD
   </tbody>
   </table>
 </div>
 {{#if loggedin}}
+=======
+</tbody>
+</table>
+{{#if isOwner}}
+>>>>>>> souzooka_master
 <form action="/gallery/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Picture">
 </form>
 <form action="/gallery/{{id}}?_method=DELETE" method="POST" >
    <input type="submit" value="Remove Picture">
 </form>
-{{else}}
+{{/if}}
+{{#unless loggedIn}}
 <a href="/user/login"><button>Log In</button></a>
 <a href="/user/login"><button>Register</button></a>
-{{/if}}
+{{/unless}}
 <a href="/gallery"><button>Back</button></a>
