@@ -1,18 +1,21 @@
-<link rel="stylesheet"  href="css/styles.css">
-<a href="/user/logout"><button>Log Out</button></a>
+<link rel="stylesheet"  href="/static/css/styles.css">
 <span>Post a new picture:</span>
+<a href="/user/logout"><button>Log Out</button></a>
 <hr>
 <form action="/gallery" method="post" enctype="application/x-www-form-urlencoded">
   Author:<br>
-  <input type="text" name="author"><br>
+  <input type="text" name="author"><br><br>
   Link:<br>
-  <input type="text" name="link"><br>
-  Description:<br>
-  <input type="text" name="description"><br>
+  <textarea rows="3" cols="50" name="link">
+  </textarea><br><br>
+    Description:<br>
+  <textarea rows="7" cols="50" name="description">
+  </textarea>
+  <br>
   <br><br>
   <input type="submit">
 </form>
-<a href="/gallery"><button>Back</button></a>
+<a href="/gallery"><button>Back to the Gallery</button></a>
 {{#if error}}
   <p>{{error}}</p>
 {{/if}}

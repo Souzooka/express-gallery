@@ -1,62 +1,55 @@
 <link rel="stylesheet"  href="/static/css/styles.css">
-<div id= header>
-<table style="width: 781px; height: 28px; margin-left: auto; margin-right: auto;">
-<tbody>
-<tr>
-<td style="width: 366px;">&nbsp;<h1>_ARCHITEKT</h1></td>
-<td style="width: 83px;">&nbsp;</td>
-<td style="width: 442px;">&nbsp;Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme</td>
-</tr>
-</tbody>
-</table>
+<div id="picture_page">
+  <div id= "header">
+      <div id="top">
+        <div id="logo">_ARCHITEKT</div>
+        <div id="statement">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</div>
+      </div>
+  </div>
+
+  <div id="picture_section">
+
+    <div id="selected_picture">
+        <h3>{{featured.author}}</h3>
+
+        <a href="/gallery/{{featured.id}}">
+          <img class = "picture_detail" src="{{featured.link}}" alt="{{featured.description}}">
+        </a>
+
+        <h4>{{featured.description}}</h4>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="allphotos_container">
+      {{#each allPhotos}}
+          <div class="containter_more_pictures">
+            <a href="/gallery/{{id}}">
+                <img class = "more_pictures" src="{{link}}">
+              </a>
+              <h4>{{author}}</h4>
+              <br>
+              <br>
+              <br>
+          </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+
 </div>
-<table style="width: 100%; height: 449px;" cellpadding="10">
-<tbody>
-<tr>
-<td style="width: 390px;" rowspan="5" padding= "50">&nbsp;&nbsp;&nbsp;
-<div id="feature">
-    <h3>{{author}}</h3>
-    <img height="500" src="{{link}}" alt="{{description}}">
-    <h4>{{description}}</h4>
-</div>
-</td>
 
-<td style="width: 300px" valign="top">
-    <div class="picture">
-      <a href="/gallery/2"><img height="100"src="https://static.dezeen.com/uploads/2011/11/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_1.jpg" ></a>
-      <h3>something</h3>
-    </div>
-  </td>
-</tr>
-
-<td style="width: 300px" valign="top">
-    <div class="picture">
-      <a href="/gallery/3"><img height="100"src="http://www.fantasticnorway.no/wp-content/uploads/2011/10/Sirene@21.jpg" ></a>
-      <h3>something</h3>
-    </div>
-  </td>
-</tr>
-
-<td style="width: 300px" valign="top">
-    <div class="picture">
-      <a href="/gallery/4"><img height="100"src="https://i0.wp.com/kienviet.net/wp-content/uploads/2012/09/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_2.jpg" ></a>
-      <h3>something</h3>
-    </div>
-  </td>
-</tr>
-
-</tbody>
-</table>
-{{#if isOwner}}
-<form action="/gallery/{{id}}/edit" method="GET" >
-   <input type="submit" value="Edit Picture">
-</form>
-<form action="/gallery/{{id}}?_method=DELETE" method="POST" >
+{{#if featured.isOwner}}
+<a href="/gallery/{{featured.id}}/edit"><button>Edit Picture</button></a>
+<form action="/gallery/{{featured.id}}?_method=DELETE" method="POST" >
    <input type="submit" value="Remove Picture">
 </form>
 {{/if}}
-{{#unless loggedIn}}
+{{#unless featured.loggedIn}}
 <a href="/user/login"><button>Log In</button></a>
 <a href="/user/login"><button>Register</button></a>
 {{/unless}}
-<a href="/gallery"><button>Back</button></a>
+<a href="/gallery"><button>Back to gallery</button></a>

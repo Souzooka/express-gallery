@@ -49,23 +49,55 @@ router.route('/new')
 
 router.route('/:id')
         // Retrieves the page for a specific picture.
-        .get((req, res) => {
-          db.Picture.findOne({
-            where: {
-              id: req.params.id
-            }
-          })
-          // If a user is authenticated, add edit and delete buttons on the picture page.
-          .then((data) => {
-            if (req.isAuthenticated()) {
-              data.dataValues.loggedIn = true;
-              data.dataValues.isOwner = isOwner(req, data);
-                res.render('picture', data.dataValues);
-            } else {
-            res.render('picture', data.dataValues);
-            }
+          .get( (req, res) => {
+
+    let collection = {};
+    db.Picture.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(data => {
+        if(req.isAuthenticated()){
+          data.dataValues.loggedIn = true;
+          data.dataValues.isOwner = isOwner(req, data);
+        }
+        collection.featured = data.dataValues;
+      })
+      .then(data => {
+        return db.Picture.findAll({where:{$not:[{id: [req.params.id]}]}})
+          .then(data => {
+            collection.allPhotos = data;
           });
+      })
+      .then(data => {
+        console.log("isis",req.isAuthenticated());
+        console.log("testtest",collection.featured);
+        // console.log("LOOK",collection.allPhotos);
+
+        res.render('picture', collection);
         })
+       .catch(error => {
+        res.redirect('/gallery');
+      });
+    })
+        // .get((req, res) => {
+        //   db.Picture.findOne({
+        //     where: {
+        //       id: req.params.id
+        //     }
+        //   })
+        //   // If a user is authenticated, add edit and delete buttons on the picture page.
+        //   .then((data) => {
+        //     if (req.isAuthenticated()) {
+        //       data.dataValues.loggedIn = true;
+        //       data.dataValues.isOwner = isOwner(req, data);
+        //         res.render('picture', data.dataValues);
+        //     } else {
+        //     res.render('picture', data.dataValues);
+        //     }
+        //   });
+        // })
         // Update an image
         .put((req, res) => {
           db.Picture.findOne({
