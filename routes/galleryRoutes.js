@@ -58,6 +58,10 @@ router.route('/:id')
       }
     })
       .then(data => {
+        if(req.isAuthenticated()){
+          data.dataValues.loggedIn = true;
+          data.dataValues.isOwner = isOwner(req, data);
+        }
         collection.featured = data.dataValues;
       })
       .then(data => {
@@ -67,11 +71,14 @@ router.route('/:id')
           });
       })
       .then(data => {
-        console.log("LOOK",collection.allPhotos);
+        console.log("isis",req.isAuthenticated());
+        console.log("testtest",collection.featured);
+        // console.log("LOOK",collection.allPhotos);
+
         res.render('picture', collection);
-      })
-      .catch(error => {
-        res.redirect('picture',collection);
+        })
+       .catch(error => {
+        res.redirect('/gallery');
       });
     })
         // .get((req, res) => {
