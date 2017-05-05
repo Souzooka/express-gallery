@@ -1,55 +1,46 @@
 <link rel="stylesheet"  href="/static/css/styles.css">
 <div id="picture_page">
-<div id= header>
-  <div id="top">
-    <div id="logo">_ARCHITEKT</div>
-    <div id="statement">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</div>
+  <div id= "header">
+      <div id="top">
+        <div id="logo">_ARCHITEKT</div>
+        <div id="statement">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps.</div>
+      </div>
   </div>
+
+  <div id="picture_section">
+
+    <div id="selected_picture">
+        <h3>{{author}}</h3>
+
+        <a href="/gallery/{{id}}">
+          <img src="{{link}}" alt="{{description}}">
+        </a>
+
+        <h4>{{description}}</h4>
+    </div>
+
+    <div id="more_pictures">
+      <a href="/gallery/{{id}}">
+          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
+        </a>
+        <h4>Title</h4>
+        <br>
+      <a href="/gallery/{{id}}">
+          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
+        </a>
+        <h4>Title</h4>
+        <br>
+        <a href="/gallery/{{id}}">
+          <img height=10% src="https://s-media-cache-ak0.pinimg.com/736x/d2/ca/43/d2ca4394086291993b0f00212f75d8e9.jpg">
+        </a>
+        <h4>Title</h4>
+    </div>
+
+  </div>
+
 </div>
-<div id="selected_picture">
-    <h3>{{author}}</h3>
 
-    <a href="/gallery/{{id}}">
-      <img width = 80% src="{{link}}" alt="{{description}}">
-    </a>
-
-    <h4>{{description}}</h4>
-</div>
-
-  <td valign="top">
-      <div class="picture">
-        <a href="/gallery/2"><img width = 75% src="https://static.dezeen.com/uploads/2011/11/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_1.jpg" ></a>
-        <h3>something</h3>
-      </div>
-    </td>
-  </tr>
-
-  <td valign="top">
-      <div class="picture">
-        <a href="/gallery/3"><img width = 75% src="http://www.fantasticnorway.no/wp-content/uploads/2011/10/Sirene@21.jpg" ></a>
-        <h3>something</h3>
-      </div>
-    </td>
-  </tr>
-
-  <td valign="top">
-      <div class="picture">
-        <a href="/gallery/4"><img width = 75% src="https://i0.wp.com/kienviet.net/wp-content/uploads/2012/09/dezeen_Mountain-Hill-Cabin-by-Fantastic-Norway_2.jpg" ></a>
-        <h3>something</h3>
-      </div>
-    </td>
-  </tr>
-
-<<<<<<< HEAD
-  </tbody>
-  </table>
-</div>
-{{#if loggedin}}
-=======
-</tbody>
-</table>
 {{#if isOwner}}
->>>>>>> souzooka_master
 <form action="/gallery/{{id}}/edit" method="GET" >
    <input type="submit" value="Edit Picture">
 </form>

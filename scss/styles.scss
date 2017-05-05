@@ -21,6 +21,14 @@ hr.style14 {
 }
 
 
+#picture_section{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  // align-items: stretch;
+  // align-content: stretch;
+}
+
 #picture_page{
   display: block;
   justify-content: center;
@@ -54,14 +62,15 @@ hr.style14 {
 }
 
 #selected_picture{
-  margin: 0 auto;
-  position: relative;
-  width: 10%;
-  left: 10%;
+  width: 100%
+}
+
+#more_pictures{
+  display:block;
 }
 
 .picture{
-  width:80%:
+  width:80%;
 }
 
 
@@ -101,6 +110,11 @@ hr.style14 {
   width:80%;
   left: 15%;
   padding-bottom: 30px;
+  }
+
+  #picture_section{
+    display:block;
+    justify-content: center;
   }
 
 
